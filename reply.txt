@@ -1,0 +1,47 @@
+If you're reading this it's probably because you've made another one of these posts complaining about Loki. Well, I am **/u/LokiBot** and my job is to call you out on your bullshit. Let's break it down point by point: 
+----
+**Loki is uncounterable**
+
+One of the things you'll hear a lot is that you can't counter stealth, or you can't play against a Loki because he can "one-shot" you with his ult. You absolutely can, here's a few ways how to:
+
+* Pay attention to sound, especially the sound cues of Loki's Vanish and Aimed Strike
+* Drop AoEs under you or at probable paths and chokepoints Loki might cross, paying attention to his movement patterns. This works especially well with DoT abilities or if you have Gem of Isolation, since constant slows reveal Loki.
+* Buy wards and pay attention to your map and VGS calls (especially against Loki solo), which you should be doing anyways. 
+* Avoid over-extending or being out of position on your own, again, something you should already be doing.
+* Buy Purification Beads/Aegis Amulet
+* If you're a squishy (especially a Mage), stay close to your support or someone with instant crowd control in teamfights. If Loki does ult you, he wastes an ult, is CC'd and dies, and if he engages with Vanish, you can drop an AoE under you as already mentioned. 
+* Buy Hide of the Nemean Lion, Midgardian Mail, Mystical Mail and/or Mantle of Discord.
+* Buy Teleport Glyph to keep up with his rotations, especially when he's split-pushing.
+* Pick any god that counters him, be it with silences (Nox, Thanatos, etc.), abilities that reveal stealth (Hou Yi, Raijin, etc.), AoE slows (Chaac, Sobek, etc.), Damage over time (Agni, Ah Muzen Cab, etc.), block stacks (Athena, Bellona, etc.), backline peel (Geb, Khepri, etc.), crowd control peel (Kumbhakarna, Ymir, etc), abilities that stick to the target (Sylvanus, Osiris, etc.) or any of the others ones who have mechanics you can use to your advantage. 
+
+Also, I don't think anyone is opposed to Titan Forge adding new ways to counter Loki or stealth (such as a luxury high CD stealth-EMP item like Servant had suggested), but it's very weird how that's almost never brought up in these threads.
+
+**Loki is unfun or frustrating**
+
+Sure he is. So is losing hp, dying, losing games, or any other mechanic intended as a punishment. The only reason you think of Loki differently is because he actually takes some effort to play against. You may disagree but that's a good thing, if we were to take this philosophy of changing anything that is hard to counter, after some time we would have a very bland, uninteresting, and especially stale game. You should think and adapt to situations during play, that's one of the main things that separates a good player from a bad player, and that's also in my opinion what makes the game fun, even though to you it might be winning without any effort.
+
+**Loki is overpowered**
+
+Loki up until recently was unanimously agreed to be terrible by every single pro player in the SPL, only now he has risen up to being "decent", and he still comes nowhere close to any of the top tier gods that are being picked. The only reason he is now being banned is because his playstyle is very unorthodox and people don't want to learn how to play against it, now that he's actually being picked.
+
+**Loki drives away new players**
+
+No, what drives away new players is smurfing (which is tied to matchmaking) and a lack of quality resources for new players, such as tutorials and builds. New players are dropped into Joust and Arena before they even get to touch Conquest, and when, or if they actually choose to play it, they are completely clueless, since there was no introduction to it and to things such as classes and roles. That has nothing to do with Loki, he is one of many gods that can be used to pubstomp, and even if it did, we shouldn't be changing the game for new and casual players, prioritizing them over the veterans who have played this game for years and actually research and care for the it. If anything we should help new players get interested enough in the game so they also become long-time players.
+
+**Loki's stealth is inconsistent**
+
+Something i hear a lot is "Loki's stealth is too good compared to other stealth abilities", especially since it's not broken by damage. We've already established Loki is not overpowered, so the only other reason someone would be arguing this is for consistency. Well, turns out consistency when it comes to balance is a bad thing. It reduces the complexity of the game and, again makes it less interesting, and the only things you'd change is you'd make the game (again) take less effort, and lower the skill cap of the game overall. Loki having the only true stealth in the game is the main focus of his kit, and something that makes him especially unique when compared to other gods. Plus, if you were to make it break on damage, it would make him completely useless, since his only other engage is his ultimate. 
+
+**Loki's kit is not lore-accurate**
+
+Neither is a bunch of other god kits. Do you think Scylla is described as a tiny little girl in mythology, or that the Romans worshiped the great floating robot Janus? That's not nearly enough reason to rework a god, especially when it is and has always been one of the most popular characters of the game, and when there are people out there with thousands upon thousands of worshipers on this god whose abilities remained unchanged for multiple years, up until the start of Season 5.
+
+**Loki breaks his team's composition**
+
+The only thing Loki does is force you to adapt to his playstyle during a game, since most of the time he plays alone. And if you want to that win a match, it is your job to adapt to it, making sure you're playing in the most optimal way to take down the enemy Titan. If you play the exact same way you'd play normally (teamfighting 4v5), it it's not Loki's fault you lost, it's your fault, he was doing his job (which was to split-push and pickoff squishy and stray targets) and you weren't doing yours. And no, Loki doesn't leave you at a disadvantage, when Loki is split-pushing in your team, if you're playing correctly you'll either bait the enemy team into terrible fights, where they'll get nothing while Loki takes objectives, or force one of their members to rotate (most of the time the solo laner, one of their frontliners), making teamfights 4v4. Again, you are complaining to Hirez asking them change the game because it takes too much effort. I'm starting to see a pattern. 
+
+----
+
+**Bot created by /u/TheServantofHelix. Still a work in progress, if you have any feedback, like suggestions of what could be added, send then to Servant's account. He plans on also adding commands for each one of these points later on.**
+
+----
