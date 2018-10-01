@@ -21,22 +21,24 @@ def bot_login():
 def bot_run(reddit):
     # Get the top 25 values from our subreddit
     print ("Getting 25 submissions")
-    subreddit = reddit.subreddit('lokicsstest')
+    subreddit = reddit.subreddit('smite')
     for submission in subreddit.new(limit=25):
         print(submission.title)
-        # If we haven't replied to this post before
         subtime = submission.created_utc
         cyctime = datetime.datetime.time(datetime.datetime.now())
+        waittime = (00:00:10.000000)
+        print ("'" + submission.title + "' submitted on:")
         print (subtime)
+        print ("Current cycle time:")
         print (cyctime)
-        #if submission.id not in posts_replied_to:
-            #search = submission.title.lower() + submission.selftext.lower()
-            #if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
-                #reply = open("reply.txt", "r")
-                #submission.reply(reply.read())
-                #print("Bot replying to : ", submission.title.lower())
-    print ("Sleeping for 10 seconds...")
-    time.sleep(10)
+        if subtime < (cyctime - waittime):
+            search = submission.title.lower() + submission.selftext.lower()
+            if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
+                reply = open("reply.txt", "r")
+                submission.reply(reply.read())
+                print("Bot replying to : ", submission.title.lower())
+    print ("Sleeping...")
+    time.sleep(waittime)
 
 reddit = bot_login()
 while True:
