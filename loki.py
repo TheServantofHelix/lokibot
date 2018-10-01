@@ -46,10 +46,6 @@ def bot_run(reddit):
                 print ("Storing " + submission.id + " in posts_replied_to.txt")
                 posts_replied_to.append(submission.id)
                 print (posts_replied_to)
-    print ("Writing list back to file")
-    with open(dir_path + "\posts_replied_to.txt", "w") as f:
-        for post_id in posts_replied_to:
-            f.write(post_id + "\n")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
