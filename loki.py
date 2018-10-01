@@ -9,7 +9,11 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 # Create the Reddit instance
 def bot_login():
     print ("Logging in...")
-    reddit = praw.Reddit('lokibot')
+    reddit = praw.Reddit(client_id=os.environ['CLIENTID'],
+                     client_secret=os.environ['CLIENTSECRET'],
+                     password=os.environ['PASSWORD'],
+                     user_agent='LokiBot v0.1',
+                     username='LokiBot')
     print ("Logged in.")
     return reddit
 
