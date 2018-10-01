@@ -38,7 +38,7 @@ def bot_run(reddit):
         print ("Checking if we have replied to " + submission.title)
         if submission.id not in posts_replied_to:
             search = submission.title.lower() + submission.selftext.lower()
-            if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'op' in search) or ('loki' in search and 'unfun' in search):
+            if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
                 reply = open("reply.txt", "r")
                 submission.reply(reply.read())
                 print("Bot replying to : ", submission.title.lower())
