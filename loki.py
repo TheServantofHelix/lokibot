@@ -8,7 +8,6 @@ import psycopg2
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 DATABASE_URL = os.environ['DATABASE_URL']
-cur = conn.cursor()
 
 # Create the Reddit instance
 def bot_login():
@@ -19,6 +18,7 @@ def bot_login():
                      user_agent='LokiBot v0.1',
                      username='LokiBot')
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+    cur = conn.cursor()
     print ("Logged in.")
     return reddit
 
