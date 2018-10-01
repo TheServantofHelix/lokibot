@@ -19,6 +19,7 @@ def bot_login():
                      username='LokiBot')
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cur = conn.cursor()
+    cur.execute("""SELECT posts_replied_to from lokibot""")
     print ("Logged in.")
     return reddit
 
