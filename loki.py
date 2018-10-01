@@ -27,8 +27,8 @@ def bot_run(reddit):
         # If we haven't replied to this post before
         subtime = submission.created_utc
         cyctime = datetime.datetime.time(datetime.datetime.now())
-        print ("Submission Time: " + subtime)
-        print ("Current Time: " + cyctime)
+        print (subtime)
+        print (cyctime)
         #if submission.id not in posts_replied_to:
             #search = submission.title.lower() + submission.selftext.lower()
             #if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
