@@ -1,4 +1,3 @@
-loki.py
 praw.ini
 reply.txt
 posts_replied_to.txt
