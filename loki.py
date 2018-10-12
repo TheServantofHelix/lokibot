@@ -39,6 +39,7 @@ def bot_run(reddit):
                 print ("Storing " + submission.id + "in the database")
                 subid = submission.id
                 cur.execute(f"UPDATE posts_replied_to SET ids = (concat('{getids}','{subid}'))")
+                cur.execute("SELECT ids FROM posts_replied_to;")
                 conn.commit()
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
