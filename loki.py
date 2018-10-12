@@ -52,7 +52,8 @@ cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(
 cur.execute("SELECT ids FROM posts_replied_to;")
 getids = cur.fetchall()
 if getids is None:
-    cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
+    cur.execute("UPDATE posts_replied_to SET ids = '-Start-: '")
+print ("Current IDs: " + getids)
 conn.commit()
 while True:
     bot_run(reddit)
