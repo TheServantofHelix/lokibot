@@ -39,7 +39,7 @@ def bot_run(reddit):
                 print ("Storing " + submission.id + "in the database")
                 subid = submission.id
                 cur.execute(f"UPDATE posts_replied_to SET ids = (concat(ids,'{subid}'))")
-                commit
+                cur.execute(COMMIT;)
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
@@ -49,11 +49,10 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
-commit = cur.execute(COMMIT;)
 getids = cur.execute("SELECT ids FROM posts_replied_to;")
 getids = cur.fetchall()
 if getids is None:
     cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
-commit
+cur.execute(COMMIT;)
 while True:
     bot_run(reddit)
