@@ -31,15 +31,14 @@ def bot_run(reddit):
         print ("Checking if we have stored " + submission.title)
         getids = cur.execute("SELECT ids FROM posts_replied_to;")
         print ("Current database is: " + getids)
-        if getids is not None:
-            if submission.id not in getids:
-                search = submission.title.lower() + submission.selftext.lower()
-                if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
-                    reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
-                    print("Messaging /u/TheServantofHelix:", submission.title.lower())
-                    # Store the current id into our list
-                    print ("Storing " + submission.id + "in the database")
-                    cur.execute("INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
+        if submission.id not in getids:
+            search = submission.title.lower() + submission.selftext.lower()
+            if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
+                reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
+                print("Messaging /u/TheServantofHelix:", submission.title.lower())
+                # Store the current id into our list
+                print ("Storing " + submission.id + "in the database")
+                cur.execute("INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
@@ -48,6 +47,6 @@ print ("Connecting to SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
+cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text NOT NULL, PRIMARY KEY(ids));")
 while True:
     bot_run(reddit)
