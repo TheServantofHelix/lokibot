@@ -31,14 +31,15 @@ def bot_run(reddit):
         # If we haven't replied to this post before
         print ("Checking if we have stored " + submission.title)
         getids = cur.execute("SELECT ids FROM posts_replied_to;")
-        if submission.id not in getids:
-            search = submission.title.lower() + submission.selftext.lower()
-            if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
-                reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
-                print("Messaging /u/TheServantofHelix:", submission.title.lower())
-                # Store the current id into our list
-                print ("Storing " + submission.id + "in the database")
-                cur.execute("INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
+        if getids is not None:
+            if submission.id not in getids:
+                search = submission.title.lower() + submission.selftext.lower()
+                if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
+                    reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
+                    print("Messaging /u/TheServantofHelix:", submission.title.lower())
+                    # Store the current id into our list
+                    print ("Storing " + submission.id + "in the database")
+                    cur.execute("INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
