@@ -48,6 +48,7 @@ conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
 getids = cur.execute("SELECT ids FROM posts_replied_to;")
+getids = cur.fetchall()
 if getids is None:
     cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
 while True:
