@@ -5,6 +5,7 @@ import re
 import os
 import time
 import psycopg2
+from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 dir_path = os.path.dirname(os.path.realpath(__file__))
 DATABASE_URL = os.environ['DATABASE_URL']
 
@@ -44,6 +45,7 @@ def bot_run(reddit):
 reddit = bot_login()
 print ("Creating SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 cur.execute("CREATE DATABASE lokibot;")
 cur.execute("CREATE TABLE posts_replied_to (ids ARRAY NOT NULL PRIMARY KEY);")
