@@ -38,7 +38,7 @@ def bot_run(reddit):
                 print("Messaging /u/TheServantofHelix:", submission.title.lower())
                 # Store the current id into our list
                 print ("Storing " + submission.id + "in the database")
-                cur.execute(INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
+                cur.execute("INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
