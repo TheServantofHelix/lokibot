@@ -33,7 +33,7 @@ def bot_run(reddit):
         if submission.id not in getids:
             search = submission.title.lower() + submission.selftext.lower()
             if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
-                reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
+                reddit.redditor('TheServantofHelix').message('Another Post: ' + submission.title, 'Link: ' + submission.url)
                 print("Messaging /u/TheServantofHelix:", submission.title.lower())
                 # Store the current id into our list
                 print ("Storing " + submission.id + "in the database")
@@ -49,7 +49,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
-getids = cur.execute("SELECT ids FROM posts_replied_to;")
+cur.execute("SELECT ids FROM posts_replied_to;")
 getids = cur.fetchall()
 if getids is None:
     cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
