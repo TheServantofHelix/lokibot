@@ -18,13 +18,12 @@ def bot_login():
                      username='LokiBot')
     print ("Logged in.")
     print ("Creating SQL Database")
-    table = (
-    CREATE DATABASE lokibot;
-    CREATE TABLE posts_replied_to (
-    ids ARRAY NOT NULL PRIMARY KEY);
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cur = conn.cursor()
-    cur.execute(table)
+    cur.execute("CREATE DATABASE lokibot;
+    CREATE TABLE posts_replied_to (
+    ids ARRAY NOT NULL PRIMARY KEY);"
+    )
     return reddit
 
 
@@ -45,7 +44,7 @@ def bot_run(reddit):
                 print("Messaging /u/TheServantofHelix:", submission.title.lower())
                 # Store the current id into our list
                 print ("Storing " + submission.id + "in the database")
-                INSERT INTO posts_replied_to(ids) VALUES (submission.id)
+                cur.execute ("INSERT INTO posts_replied_to(ids) VALUES (submission.id)")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
