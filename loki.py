@@ -51,6 +51,7 @@ cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
 cur.execute("SELECT ids FROM posts_replied_to;")
 getids = str(cur.fetchall())
+print(type(getids))
 if getids is None:
     cur.execute("UPDATE posts_replied_to SET ids = '-Start-: '")
 print ("Current IDs: " + getids)
