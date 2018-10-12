@@ -47,7 +47,6 @@ print ("Creating SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
-cur.execute("CREATE DATABASE lokibot;")
 cur.execute("CREATE TABLE posts_replied_to (ids ARRAY NOT NULL PRIMARY KEY);")
 while True:
     bot_run(reddit)
