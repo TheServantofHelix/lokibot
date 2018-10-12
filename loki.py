@@ -17,11 +17,6 @@ def bot_login():
                      user_agent='LokiBot v0.1',
                      username='LokiBot')
     print ("Logged in.")
-    print ("Creating SQL Database")
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-    cur = conn.cursor()
-    cur.execute("CREATE DATABASE lokibot;")
-    cur.execute("CREATE TABLE posts_replied_to (ids ARRAY NOT NULL PRIMARY KEY);")
     return reddit
 
 
@@ -47,5 +42,10 @@ def bot_run(reddit):
     time.sleep(10)
 
 reddit = bot_login()
+print ("Creating SQL Database")
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+cur = conn.cursor()
+cur.execute("CREATE DATABASE lokibot;")
+cur.execute("CREATE TABLE posts_replied_to (ids ARRAY NOT NULL PRIMARY KEY);")
 while True:
     bot_run(reddit)
