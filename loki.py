@@ -39,7 +39,7 @@ def bot_run(reddit):
                 print ("Storing " + submission.id + "in the database")
                 subid = submission.id
                 cur.execute(f"UPDATE posts_replied_to SET ids = (concat(ids,'{subid}'))")
-                commit()
+                conn.commit()
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
@@ -53,6 +53,6 @@ getids = cur.execute("SELECT ids FROM posts_replied_to;")
 getids = cur.fetchall()
 if getids is None:
     cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
-commit()
+conn.commit()
 while True:
     bot_run(reddit)
