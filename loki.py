@@ -48,7 +48,6 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text NOT NULL, PRIMARY KEY(ids));")
-start = "-Start-"
-cur.execute("UPDATE posts_replied_to SET ids = start ")
+cur.execute("UPDATE posts_replied_to SET ids = -Start-,")
 while True:
     bot_run(reddit)
