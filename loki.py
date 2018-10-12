@@ -38,7 +38,7 @@ def bot_run(reddit):
                 # Store the current id into our list
                 print ("Storing " + submission.id + "in the database")
                 subid = submission.id
-                allids = getids + subid
+                allids = getids + " " + subid
                 cur.execute(f"UPDATE posts_replied_to SET ids = '{allids}'")
                 cur.execute("SELECT ids FROM posts_replied_to;")
                 conn.commit()
@@ -53,7 +53,7 @@ cur = conn.cursor()
 cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
 cur.execute("SELECT ids FROM posts_replied_to;")
 listids = str(cur.fetchall())
-getids = listids.replace("[]", "'-Start-: '")
+getids = listids.replace("[]", "-Start-: ")
 print ("Current IDs: " + getids)
 conn.commit()
 while True:
