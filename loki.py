@@ -21,9 +21,7 @@ def bot_login():
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cur = conn.cursor()
     cur.execute("CREATE DATABASE lokibot;"
-    cur.execute("CREATE TABLE posts_replied_to (
-    ids ARRAY NOT NULL PRIMARY KEY);"
-    )
+    cur.execute("CREATE TABLE posts_replied_to (ids ARRAY NOT NULL PRIMARY KEY);")
     return reddit
 
 
