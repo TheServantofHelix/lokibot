@@ -27,10 +27,10 @@ def bot_run(reddit):
     print ("Getting 25 submissions")
     subreddit = reddit.subreddit('lokicsstest')
     for submission in subreddit.new(limit=25):
-        print(submission.title)
         # If we haven't replied to this post before
         print ("Checking if we have stored " + submission.title)
         getids = cur.execute("SELECT ids FROM posts_replied_to;")
+        print ("Current database is: " + getids)
         if getids is not None:
             if submission.id not in getids:
                 search = submission.title.lower() + submission.selftext.lower()
@@ -44,7 +44,7 @@ def bot_run(reddit):
     time.sleep(10)
 
 reddit = bot_login()
-print ("Creating SQL Database")
+print ("Connecting to SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
