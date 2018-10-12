@@ -29,7 +29,6 @@ def bot_run(reddit):
     for submission in subreddit.new(limit=25):
         # If we haven't replied to this post before
         print ("Checking if we have stored " + submission.title)
-        getids = cur.execute("SELECT ids FROM posts_replied_to;")
         print (getids)
         if submission.id not in getids:
             search = submission.title.lower() + submission.selftext.lower()
@@ -47,7 +46,9 @@ print ("Connecting to SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text NOT NULL, PRIMARY KEY(ids));")
-cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
+cur.execute("CREATE TABLE IF NOT EXISTS posts_replied_to (ids text, PRIMARY KEY(ids));")
+getids = cur.execute("SELECT ids FROM posts_replied_to;")
+if getids is None:
+    cur.execute("UPDATE posts_replied_to SET ids = '-Start-'")
 while True:
     bot_run(reddit)
