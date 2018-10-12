@@ -21,7 +21,7 @@ def bot_login():
     table = (
     CREATE DATABASE lokibot;
     CREATE TABLE posts_replied_to (
-    ids ARRAY NOT NULL )
+    ids ARRAY NOT NULL PRIMARY KEY);
     conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     cur = conn.cursor()
     cur.execute(table)
@@ -36,16 +36,15 @@ def bot_run(reddit):
     for submission in subreddit.new(limit=25):
         print(submission.title)
         # If we haven't replied to this post before
-        print ("Checking if we have replied to " + submission.title)
+        print ("Checking if we have stored " + submission.title)
         getids = SELECT ids FROM posts_replied_to;
         if submission.id not in getids:
             search = submission.title.lower() + submission.selftext.lower()
             if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
-                reply = open("reply.txt", "r")
-                submission.reply(reply.read())
-                print("Bot replying to : ", submission.title.lower())
+                reddit.redditor('TheServantofHelix').message('Another Post:' + submission.title, 'Link:' + submission.url)
+                print("Messaging /u/TheServantofHelix:", submission.title.lower())
                 # Store the current id into our list
-                print ("Storing " + submission.id + " database")
+                print ("Storing " + submission.id + "in the database")
                 INSERT INTO posts_replied_to(ids) VALUES (submission.id)
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
