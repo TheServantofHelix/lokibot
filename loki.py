@@ -38,7 +38,7 @@ def bot_run(reddit):
                 print("Messaging /u/TheServantofHelix:", submission.title.lower())
                 # Store the current id into our list
                 print ("Storing " + submission.id + "in the database")
-                cur.execute("""INSERT INTO posts_replied_to(ids) VALUES (submission.id)""")
+                cur.execute(INSERT INTO posts_replied_to(ids) VALUES (posts_replied_to(ids) + submission.id)")
     print ("Sleeping for 10 seconds...")
     time.sleep(10)
 
@@ -47,6 +47,6 @@ print ("Creating SQL Database")
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 cur = conn.cursor()
-cur.execute("CREATE TABLE posts_replied_to (ids array,);")
+cur.execute("CREATE TABLE posts_replied_to (ids text, PRIMARY KEY(ids));")
 while True:
     bot_run(reddit)
