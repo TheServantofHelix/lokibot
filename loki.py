@@ -30,7 +30,7 @@ def bot_run(reddit):
         # If we haven't replied to this post before
         print ("Checking if we have stored " + submission.title)
         getids = cur.execute("SELECT ids FROM posts_replied_to;")
-        print ("Current database is: " + getids)
+        print (getids)
         if submission.id not in getids:
             search = submission.title.lower() + submission.selftext.lower()
             if ('loki' in search and 'rework' in search) or ('loki' in search and 'broken' in search) or ('loki' in search and 'overpowered' in search) or ('loki' in search and 'unfun' in search):
